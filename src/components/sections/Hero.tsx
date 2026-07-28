@@ -67,10 +67,9 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="relative z-10 w-full h-full flex items-center justify-center drop-shadow-2xl"
               >
-                {/* Fallback image wrapper in case products/calciplex11.png isn't available yet */}
                 <div className="relative w-3/4 h-3/4">
                   <Image
-                    src="/products/calciplex11.png"
+                    src="/products/calciplex11-new.png"
                     alt="Agri Field Crop Tech Product"
                     fill
                     className="object-contain drop-shadow-2xl"
