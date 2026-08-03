@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { companyInfo } from "@/data/company";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,21 +13,21 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-agri-lime via-agri-green to-agri-light" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <div className="bg-white/90 p-1 rounded-full">
                 <Image 
                   src="/logo/company-logo.png" 
-                  alt="Agri Field Crop Tech Logo" 
+                  alt={`${companyInfo.name} Logo`} 
                   width={40} 
                   height={40} 
                   className="object-contain" 
                 />
               </div>
               <span className="font-poppins font-bold text-2xl text-white">
-                Agri Field Crop Tech
+                {companyInfo.name}
               </span>
             </div>
             <p className="text-gray-300 leading-relaxed text-sm">
@@ -58,17 +59,6 @@ export default function Footer() {
               <li><Link href="#about" className="text-gray-300 hover:text-white transition-colors">आमच्याविषयी</Link></li>
               <li><Link href="#products" className="text-gray-300 hover:text-white transition-colors">उत्पादने</Link></li>
               <li><Link href="#why-us" className="text-gray-300 hover:text-white transition-colors">आम्हालाच का निवडावे?</Link></li>
-              <li><Link href="#gallery" className="text-gray-300 hover:text-white transition-colors">गॅलरी</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-lg mb-6 text-agri-lime">आमची उत्पादने</h4>
-            <ul className="space-y-3 font-poppins">
-              <li><Link href="#products" className="text-gray-300 hover:text-white transition-colors">CALCIPLEX-11</Link></li>
-              <li><Link href="#products" className="text-gray-300 hover:text-white transition-colors">MG-PRO</Link></li>
-              <li><Link href="#products" className="text-gray-300 hover:text-white transition-colors">PHYTO ZINC</Link></li>
-              <li><Link href="#products" className="text-gray-300 hover:text-white transition-colors">NUTRI PLUS</Link></li>
             </ul>
           </div>
 
@@ -77,15 +67,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 text-agri-lime flex-shrink-0 mt-0.5" />
-                <span>Agri Field Crop Tech<br/>संभाजीनगर, महाराष्ट्र</span>
+                <span className="whitespace-pre-line">{companyInfo.name}{"\n"}{companyInfo.shortAddress}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-300">
                 <Phone className="w-5 h-5 text-agri-lime flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <a href={`tel:+91${companyInfo.phone}`} className="hover:text-white transition-colors">+91 {companyInfo.phone}</a>
               </li>
               <li className="flex items-center gap-3 text-gray-300">
                 <Mail className="w-5 h-5 text-agri-lime flex-shrink-0" />
-                <span>agrifieldcroptech@gmail.com</span>
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-white transition-colors">{companyInfo.email}</a>
               </li>
             </ul>
           </div>
@@ -93,7 +83,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Agri Field Crop Tech. सर्व हक्क सुरक्षित.
+            © {currentYear} {companyInfo.name}. सर्व हक्क सुरक्षित.
           </p>
           <div className="text-gray-400 text-sm flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

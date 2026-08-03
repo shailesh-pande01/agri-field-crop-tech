@@ -14,9 +14,11 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+import { companyInfo } from "@/data/company";
+
 export const metadata: Metadata = {
-  title: "Agri Field Crop Tech",
-  description: "उत्तम पीक, अधिक उत्पादन आणि विश्वासार्ह शेतीसाठी आधुनिक कृषी उत्पादने. Agri Field Crop Tech manufactures high-quality agricultural crop nutrition products.",
+  title: companyInfo.name,
+  description: `उत्तम पीक, अधिक उत्पादन आणि विश्वासार्ह शेतीसाठी आधुनिक कृषी उत्पादने. ${companyInfo.name} manufactures high-quality agricultural crop nutrition products.`,
 };
 
 export default function RootLayout({

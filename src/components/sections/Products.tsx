@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { products, type Product } from "@/data/products";
-import ProductModal from "@/components/ui/ProductModal";
-import { ChevronRight } from "lucide-react";
+import { products } from "@/data/products";
 
 export default function Products() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
     <section id="products" className="py-24 bg-agri-cream relative">
@@ -61,23 +59,17 @@ export default function Products() {
                 <p className="text-agri-green font-semibold text-sm mb-3 mt-1 min-h-[40px]">{product.marathiName}</p>
                 <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">{product.description}</p>
                 
-                <button
-                  onClick={() => setSelectedProduct(product)}
+                <Link
+                  href={`/products/${product.id}`}
                   className="w-full mt-auto flex items-center justify-center gap-2 bg-agri-cream hover:bg-agri-green text-agri-green hover:text-white border border-agri-green/20 py-3 rounded-xl font-semibold transition-colors"
                 >
                   अधिक माहिती <ChevronRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <ProductModal
-        product={selectedProduct}
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      />
     </section>
   );
 }

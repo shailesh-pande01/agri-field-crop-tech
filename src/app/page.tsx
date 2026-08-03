@@ -4,7 +4,6 @@ import About from "@/components/sections/About";
 import Products from "@/components/sections/Products";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Benefits from "@/components/sections/Benefits";
-import Gallery from "@/components/sections/Gallery";
 import Manufacturing from "@/components/sections/Manufacturing";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
@@ -21,7 +20,6 @@ export default function Home() {
         <Products />
         <WhyChooseUs />
         <Benefits />
-        <Gallery />
         <Manufacturing />
         <Testimonials />
         <FAQ />

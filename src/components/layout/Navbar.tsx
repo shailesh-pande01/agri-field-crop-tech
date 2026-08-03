@@ -6,12 +6,13 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { companyInfo } from "@/data/company";
+
 const navLinks = [
   { name: "मुख्यपृष्ठ", href: "#home" },
   { name: "आमच्याविषयी", href: "#about" },
   { name: "उत्पादने", href: "#products" },
   { name: "आम्हालाच का निवडावे?", href: "#why-us" },
-  { name: "गॅलरी", href: "#gallery" },
   { name: "संपर्क", href: "#contact" },
 ];
 
@@ -38,13 +39,13 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Image 
               src="/logo/company-logo.png" 
-              alt="Agri Field Crop Tech Logo" 
+              alt={`${companyInfo.name} Logo`} 
               width={40} 
               height={40} 
               className="object-contain" 
             />
             <span className="font-poppins font-bold text-xl md:text-2xl text-agri-dark">
-              Agri Field Crop Tech
+              {companyInfo.name}
             </span>
           </div>
 

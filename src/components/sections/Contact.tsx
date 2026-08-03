@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { companyInfo } from "@/data/company";
 
 export default function Contact() {
   return (
@@ -43,7 +44,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900 mb-1">कारखाना व कार्यालय</h5>
-                  <p className="text-gray-600">Agri Field Crop Tech<br/>संभाजीनगर, महाराष्ट्र</p>
+                  <p className="text-gray-600 whitespace-pre-line">{companyInfo.name}{"\n"}{companyInfo.shortAddress}</p>
                 </div>
               </div>
 
@@ -53,7 +54,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900 mb-1">फोन नंबर</h5>
-                  <p className="text-gray-600">+91 98765 43210</p>
+                  <p className="text-gray-600">+91 {companyInfo.phone}</p>
                   <p className="text-sm text-gray-500 mt-1">(सकाळी १० ते संध्याकाळी ६)</p>
                 </div>
               </div>
@@ -64,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900 mb-1">ईमेल</h5>
-                  <p className="text-gray-600">agrifieldcroptech@gmail.com</p>
+                  <p className="text-gray-600">{companyInfo.email}</p>
                 </div>
               </div>
             </div>

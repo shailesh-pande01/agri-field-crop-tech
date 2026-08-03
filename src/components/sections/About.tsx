@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Factory, ShieldCheck, Sprout } from "lucide-react";
 import Image from "next/image";
+import { companyInfo } from "@/data/company";
 
 export default function About() {
   const features = [
     { icon: <ShieldCheck className="w-6 h-6 text-agri-green" />, title: "उत्कृष्ट गुणवत्ता" },
     { icon: <Sprout className="w-6 h-6 text-agri-green" />, title: "शास्त्रीय पद्धतीने विकसित उत्पादने" },
     { icon: <CheckCircle2 className="w-6 h-6 text-agri-green" />, title: "शेतकरी-केंद्रित दृष्टिकोन" },
-    { icon: <Factory className="w-6 h-6 text-agri-green" />, title: "छत्रपती संभाजीनगर येथे निर्मिती" },
+    { icon: <Factory className="w-6 h-6 text-agri-green" />, title: `${companyInfo.shortAddress} येथे निर्मिती` },
   ];
 
   return (
@@ -33,8 +34,8 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-agri-dark/80 to-transparent flex items-end p-8">
                 <div className="text-white">
-                  <p className="font-bold text-2xl">Agri Field Crop Tech</p>
-                  <p className="opacity-90">संभाजीनगर, महाराष्ट्र</p>
+                  <p className="font-bold text-2xl">{companyInfo.name}</p>
+                  <p className="opacity-90">{companyInfo.shortAddress}</p>
                 </div>
               </div>
             </div>
@@ -55,7 +56,7 @@ export default function About() {
               शेतकऱ्यांची प्रगती, आमचे ध्येय!
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
-              <span className="font-semibold text-agri-green">Agri Field Crop Tech</span> हे उच्च दर्जाची कृषी उत्पादने बनवणारी एक विश्वासार्ह कंपनी आहे. आमची उत्पादने पिकांची वाढ, पिकांचा दर्जा, उत्पादन आणि एकंदर शेतीची उत्पादकता वाढवण्यासाठी शास्त्रशुद्ध पद्धतीने तयार केली जातात.
+              <span className="font-semibold text-agri-green">{companyInfo.name}</span> हे उच्च दर्जाची कृषी उत्पादने बनवणारी एक विश्वासार्ह कंपनी आहे. आमची उत्पादने पिकांची वाढ, पिकांचा दर्जा, उत्पादन आणि एकंदर शेतीची उत्पादकता वाढवण्यासाठी शास्त्रशुद्ध पद्धतीने तयार केली जातात.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
               शेतकऱ्यांना दर्जेदार आणि परिणामकारक उत्पादने देणे हा आमचा मुख्य उद्देश आहे. आमच्या अत्याधुनिक कारखान्यातून थेट तुमच्या शेतापर्यंत उत्तम दर्जाची खते पोहोचवण्यासाठी आम्ही वचनबद्ध आहोत.
